@@ -1,0 +1,17 @@
+import selfcore from "selfcore";
+
+const client = new selfcore();
+const gateway = new selfcore.Gateway(
+  "YOUR TOKEN NUM"
+);
+
+gateway.on("message", (m) => {
+  if (m.channel_id === "CHANNEL UI ID") {
+    let content = m.content ? m.content : { embeds: [m.embeds[0]] };
+
+    client.sendWebhook(
+      WHERE TO PASTE .... CHANNEL WEBHOOK!",
+      content
+    );
+  }
+});
